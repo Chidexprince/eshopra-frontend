@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'
+import { LoaderComponent } from './components/loader/loader.component';
 
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+
 
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    FooterComponent
+    LoaderComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent,
-    HttpClientModule
+    HttpClientModule,
+    LoaderComponent
   ]
 })
 export class SharedModule { }

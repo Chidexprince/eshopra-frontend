@@ -9,17 +9,41 @@ import { Product } from '../../../shared/models/product'
 
 @Injectable()
 export class ProductService {
-  baseUrl = environment.apiUrl + "/products";
-  constructor(private http: HttpClient) { }
+  url = environment.apiUrl + '/products';
+  constructor(private http: HttpClient) {}
 
   public getProducts() {
-    return this.http.get<Product>(this.baseUrl).pipe(catchError(this.errorHandler))
+    return this.http
+      .get<Product[]>(this.url)
+      .pipe(catchError(this.errorHandler));
   }
 
-
-   // Error Handler
-   errorHandler(error: HttpErrorResponse) {
-    return throwError(() =>error);
+  public getProductById(productId: number) {
+    return this.http
+      .get<Product>(this.url + '/' + productId)
+      .pipe(catchError(this.errorHandler));
   }
-  
+
+  public addProduct(product: Product) {
+    return this.http
+      .post<any>(this.url, product)
+      .pipe(catchError(this.errorHandler));
+  }
+
+  public updateProduct(product: Product) {
+    return this.http
+      .put<any>(this.url, product)
+      .pipe(catchError(this.errorHandler));
+  }
+
+  public deleteProductById(productId: number) {
+    return this.http
+      .delete<Product>(this.url + '/' + productId)
+      .pipe(catchError(this.errorHandler));
+  }
+
+  // Error Handler
+  errorHandler(error: HttpErrorResponse) {
+    return throwError(() => error);
+  }
 }
