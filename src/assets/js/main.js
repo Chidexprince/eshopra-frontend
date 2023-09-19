@@ -23,7 +23,7 @@
 20. Video Play Js
 21. Password Toggle Js
 ****************************************************/
-
+setTimeout(() => {
 (function ($) {
 	"use strict";
 
@@ -1975,14 +1975,6 @@
 		});
 	  }
 
-	if ($('.infinite-container').length > 0) {
-		let ias = new InfiniteAjaxScroll('.infinite-container', {
-			item: '.infinite-item',
-			next: '.infinite-next-link',
-			pagination: '.infinite-pagination'
-		});
-
-	}
 
 	if ($('.load-more-content').length > 0) {
 		$('.load-more-content').btnLoadmore({
@@ -1994,3 +1986,4 @@
 	}
 
 })(jQuery);
+}, 500)

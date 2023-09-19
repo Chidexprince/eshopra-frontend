@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../service/product.service';
+import { Product } from 'src/app/shared/models/product';
 
 @Component({
   selector: 'app-product-list',
@@ -7,6 +8,8 @@ import { ProductService } from '../../service/product.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  loader = false;
+  products: Product[] = [];
 
   constructor(private productService: ProductService) {}
 
@@ -15,9 +18,13 @@ export class ProductListComponent implements OnInit {
   }
 
   getProductList() {
+    this.loader = true;
     this.productService.getProducts()
     .subscribe(data  => {
-      console.log(data);
+      this.loader = false;
+      this.products = data
+    }, error => {
+      console.log(error.message)
     })
   }
 
