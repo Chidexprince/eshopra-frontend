@@ -38,21 +38,7 @@
                    </div>
                    
                    <!-- categories -->
-                   <div class="tp-shop-widget mb-50">
-                      <h3 class="tp-shop-widget-title">Categories</h3>
-
-                      <div class="tp-shop-widget-content">
-                         <div class="tp-shop-widget-categories">
-                            <ul>
-                               <li><a href="#">Leather <span>10</span></a></li>
-                               <li><a href="#">Classic Watch <span>18</span></a></li>
-                               <li><a href="#">Leather Man Wacth <span>22</span></a></li>
-                               <li><a href="#">Trending Watch <span>17</span></a></li>
-                               <li><a href="#">Google <span>22</span></a></li>
-                            </ul>
-                         </div>
-                      </div>
-                   </div>
+                   <app-product-category [productCategory]="productCategory" [productLength]="products.length"></app-product-category>
 
 
                    <!-- brand -->
@@ -137,7 +123,7 @@
                                      </li>
                                    </ul>
                                </div>
-                               <div class="tp-shop-top-result">
+                               <div *ngIf="products.length" class="tp-shop-top-result">
                                   <p>Showing 1–14 of {{products.length}} products</p>
                                </div>
                             </div>
