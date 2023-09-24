@@ -1,0 +1,14 @@
+ <!-- categories -->
+ <div class="tp-shop-widget mb-50">
+    <h3 class="tp-shop-widget-title">Categories</h3>
+
+    <div class="tp-shop-widget-content">
+       <div class="tp-shop-widget-categories">
+          <ul class="link">
+             <li *ngFor="let productCat of productCategory">
+                <a routerLinkActive="link-primary" [routerLink]="['/product', 'product-category', productCat.id]">{{productCat.categoryName}} <span>{{productLength}}</span></a>
+            </li>
+          </ul>
+       </div>
+    </div>
+ </div>

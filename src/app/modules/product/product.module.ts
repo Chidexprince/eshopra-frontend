@@ -7,19 +7,22 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductService } from './service/product.service';
+import { ProductCategoryComponent } from './components/product-category/product-category.component';
+import { ProductCategoryService } from './service/product-category.service';
 
 
 @NgModule({
   declarations: [
     ProductComponent,
     ProductDetailComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductCategoryComponent
   ],
   imports: [
     CommonModule,
     ProductRoutingModule,
     SharedModule
   ],
-  providers: [ProductService]
+  providers: [ProductService, ProductCategoryService]
 })
 export class ProductModule { }
