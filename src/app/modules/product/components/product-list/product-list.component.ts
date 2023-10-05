@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../service/product.service';
-import { Product } from 'src/app/shared/models/product';
-import { ProductCategory } from 'src/app/shared/models/product-category';
 import { ProductCategoryService } from '../../service/product-category.service';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/shared/models/product';
+import { ProductCategory } from 'src/app/shared/models/product-category';
 
 @Component({
   selector: 'app-product-list',

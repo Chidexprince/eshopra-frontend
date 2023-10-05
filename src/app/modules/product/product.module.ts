@@ -13,15 +13,13 @@ import { ProductCategoryService } from './service/product-category.service';
 
 @NgModule({
   declarations: [
-    ProductComponent,
     ProductDetailComponent,
     ProductListComponent,
-    ProductCategoryComponent
   ],
   imports: [
     CommonModule,
     ProductRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [ProductService, ProductCategoryService]
 })
