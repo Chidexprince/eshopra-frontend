@@ -21,12 +21,14 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const productCatId = params["id"];
+      const keyword = params["keyword"];
 
       if(productCatId) {
         this.getProductsByCategory(productCatId);
+      } else if(keyword) {
+        this.findProductsByName(keyword);
       } else {
         this.getProductList();
-
       }
     })
     this.getProductCategory();
@@ -65,6 +67,19 @@ export class ProductListComponent implements OnInit {
     }, error => {
       this.loader = false;
       console.log(error.message)
+    })
+  }
+
+  findProductsByName(name: string) {
+    this.loader = true;
+    this.productService.findProductsByName(name)
+    .subscribe(data  => {
+      this.loader = false;
+      console.log(data);
+      this.products = data;
+    }, error => {
+      console.log(error.message)
+      this.loader = false;
     })
   }
 

@@ -24,6 +24,12 @@ export class ProductService {
       .pipe(catchError(this.errorHandler));
   }
 
+  public findProductsByName(name: string) {
+    return this.http
+      .get<Product[]>(this.url + '/search/findByName?name=' + name)
+      .pipe(catchError(this.errorHandler));
+  }
+
   public addProduct(product: Product) {
     return this.http
       .post<any>(this.url, product)
