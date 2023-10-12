@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   loader = false;
   products: Product[] = [];
   productCategory: ProductCategory[] = [];
+  selectedProduct!: Product;
 
   constructor(private productService: ProductService, 
    private productCategoryService: ProductCategoryService) {}
@@ -56,6 +57,10 @@ export class HomeComponent implements OnInit {
       this.loader = false;
       console.log(error.message)
     })
+  }
+
+  checkProduct(product: Product) {
+    this.selectedProduct = product;
   }
 
 }

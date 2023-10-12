@@ -1,3 +1,5 @@
+import { ProductCategory } from "./product-category";
+
 export interface Product {
     id: number;
     sku: string;
@@ -9,4 +11,5 @@ export interface Product {
     unitsInStock: number;
     dateCreated: string;
     lastUpdated: string;
+    category: ProductCategory;
 }

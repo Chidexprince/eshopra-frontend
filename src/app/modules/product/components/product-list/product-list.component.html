@@ -164,6 +164,14 @@
                                <div *ngFor="let product of products" class="col-xl-4 col-md-6 col-sm-6 infinite-item">
                                  <app-product [product]="product"></app-product>
                                </div>
+
+                               <div class="text-center" *ngIf="products?.length == 0">
+                                 <div class="tp-error-thumb">
+                                    <img src="assets/img/error/error.png" alt="error">
+                                 </div>
+                                 <h4>No products found</h4>
+
+                               </div>
                             </div>
                          </div>
                        </div>                            

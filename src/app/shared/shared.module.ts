@@ -5,6 +5,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ProductComponent } from '../modules/product/components/product/product.component';
 import { ProductCategoryComponent } from '../modules/product/components/product-category/product-category.component';
 import { RouterModule } from '@angular/router';
+import { ProductDetailComponent } from '../modules/product/components/product-detail/product-detail.component';
 
 
 
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     LoaderComponent,
     ProductComponent,
-    ProductCategoryComponent
+    ProductCategoryComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     LoaderComponent,
     ProductComponent,
-    ProductCategoryComponent
+    ProductCategoryComponent,
+    ProductDetailComponent
   ]
 })
 export class SharedModule { }
