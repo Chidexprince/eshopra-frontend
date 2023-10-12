@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from 'src/app/shared/models/product';
 
 @Component({
@@ -9,5 +9,11 @@ import { Product } from 'src/app/shared/models/product';
 export class ProductComponent {
   @Input()
   product!: Product;
+
+  @Output() selectProduct = new EventEmitter<Product>();
+
+  productClick() {
+    this.selectProduct.emit(this.product);
+  }
 
 }
