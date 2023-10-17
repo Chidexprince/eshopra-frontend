@@ -5,6 +5,9 @@
     <div class="tp-shop-widget-content">
        <div class="tp-shop-widget-categories">
           <ul class="link">
+            <li>
+               <a routerLink="/product">All</a>
+            </li>
              <li *ngFor="let productCat of productCategory">
                 <a routerLinkActive="link-primary" [routerLink]="['/product', 'product-category', productCat.id]">{{productCat.categoryName}} </a>
             </li>

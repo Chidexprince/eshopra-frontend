@@ -16,7 +16,7 @@ export class ProductCategoryService {
 
   public getProductCategory() {
     return this.http
-      .get<ProductCategory[]>(this.url)
+      .get<any>(this.url)
       .pipe(catchError(this.errorHandler));
   }
 
@@ -26,9 +26,9 @@ export class ProductCategoryService {
       .pipe(catchError(this.errorHandler));
   }
 
-  public getProductsByCategoryId(categoryId: number) {
+  public getProductsByCategoryId(categoryId: number, page: number, size: number) {
     return this.http
-      .get<Product[]>(this.url + '/' + categoryId + '/products')
+      .get<any>(this.url + '/' + categoryId + '/products?page=' + page + '&size=' + size)
       .pipe(catchError(this.errorHandler));
   }
 
