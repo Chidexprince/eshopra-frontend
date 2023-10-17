@@ -12,9 +12,10 @@ export class ProductService {
   url = environment.apiUrl + '/products';
   constructor(private http: HttpClient) {}
 
-  public getProducts() {
+  public getProducts(page: number, size: number) {
+  const url = `${this.url}?page=${page}&size=${size}`;
     return this.http
-      .get<Product[]>(this.url)
+      .get<any>(url)
       .pipe(catchError(this.errorHandler));
   }
 

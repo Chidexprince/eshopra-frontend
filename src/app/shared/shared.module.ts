@@ -6,6 +6,7 @@ import { ProductComponent } from '../modules/product/components/product/product.
 import { ProductCategoryComponent } from '../modules/product/components/product-category/product-category.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from '../modules/product/components/product-detail/product-detail.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -19,10 +20,12 @@ import { ProductDetailComponent } from '../modules/product/components/product-de
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   exports: [
     HttpClientModule,
+    NgbModule,
     LoaderComponent,
     ProductComponent,
     ProductCategoryComponent,

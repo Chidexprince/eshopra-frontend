@@ -292,17 +292,21 @@
                <div class="tp-product-tab-2 tp-tab mb-50 text-center">
                   <nav>
                      <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-allCollection-tab" data-bs-toggle="tab"
+                      <!--
+ <button class="nav-link" id="nav-allCollection-tab" data-bs-toggle="tab"
                            data-bs-target="#nav-allCollection" type="button" role="tab"
                            aria-controls="nav-allCollection" aria-selected="true" (click)="getProductList()">
                            All Collection
                         </button>
+                      -->  
 
-                        <button *ngFor="let productCat of productCategory" class="nav-link"
+                        <button *ngFor="let productCat of productCategory; let i = index"
+                           [class.active]="i === activeIndex" 
+                           class="nav-link"
                            [id]="'nav-' + productCat.categoryName + '-tab'" [attr.data-bs-toggle]="'tab'"
                            [attr.data-bs-target]="'#nav-' + productCat.categoryName" type="button" role="tab"
                            [attr.aria-controls]="'nav-' + productCat.categoryName" aria-selected="false"
-                           (click)="getProductsByCategory(productCat.id)">
+                           (click)="getProductsByCategory(productCat.id); setActiveIndex(i)">
                            {{productCat.categoryName}}
                         </button>
 
