@@ -71,7 +71,6 @@ export class ProductListComponent implements OnInit {
     this.productCategoryService.getProductCategory()
     .subscribe(data  => {
       this.productCategory = data.content
-      console.log(data)
     }, error => {
       console.log(error.message)
     })
@@ -97,11 +96,15 @@ export class ProductListComponent implements OnInit {
 
   findProductsByName(name: string) {
     this.loader = true;
-    this.productService.findProductsByName(name)
+    this.currentPage = this.paginationDto.currentPage;
+    this.size = this.paginationDto.defaultSize;
+    this.productService.findProductsByName(name, this.currentPage - 1, this.size)
     .subscribe(data  => {
       this.loader = false;
       console.log(data);
-      this.products = data;
+      this.products = [];
+      this.products = data.content;
+      this.paginationDto.totalSize = data.totalElements;
     }, error => {
       console.log(error.message)
       this.loader = false;

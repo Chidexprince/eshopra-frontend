@@ -7,6 +7,7 @@ import { ProductCategoryComponent } from '../modules/product/components/product-
 import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from '../modules/product/components/product-detail/product-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,11 +22,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     RouterModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   exports: [
     HttpClientModule,
     NgbModule,
+    FormsModule,
     LoaderComponent,
     ProductComponent,
     ProductCategoryComponent,

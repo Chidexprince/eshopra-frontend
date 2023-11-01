@@ -292,17 +292,9 @@
                <div class="tp-product-tab-2 tp-tab mb-50 text-center">
                   <nav>
                      <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                      <!--
- <button class="nav-link" id="nav-allCollection-tab" data-bs-toggle="tab"
-                           data-bs-target="#nav-allCollection" type="button" role="tab"
-                           aria-controls="nav-allCollection" aria-selected="true" (click)="getProductList()">
-                           All Collection
-                        </button>
-                      -->  
 
                         <button *ngFor="let productCat of productCategory; let i = index"
-                           [class.active]="i === activeIndex" 
-                           class="nav-link"
+                           [class.active]="i === activeIndex" class="nav-link"
                            [id]="'nav-' + productCat.categoryName + '-tab'" [attr.data-bs-toggle]="'tab'"
                            [attr.data-bs-target]="'#nav-' + productCat.categoryName" type="button" role="tab"
                            [attr.aria-controls]="'nav-' + productCat.categoryName" aria-selected="false"
@@ -326,7 +318,9 @@
                         </div>
                      </div>
                   </div>
-                  <div class="tab-pane fade" [id]="'nav-' + productCat.categoryName" role="tabpanel" [attr.aria-labelledby]="'nav-' + productCat.categoryName + '-tab'" tabindex="0" *ngFor="let productCat of productCategory">
+                  <div class="tab-pane fade" [id]="'nav-' + productCat.categoryName" role="tabpanel"
+                     [attr.aria-labelledby]="'nav-' + productCat.categoryName + '-tab'" tabindex="0"
+                     *ngFor="let productCat of productCategory">
                      <div class="row">
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" *ngFor="let product of products| slice:0:8">
                            <app-product [product]="product" (selectProduct)="checkProduct($event)"></app-product>
@@ -1630,15 +1624,13 @@
    </section>
    <!-- instagram area end -->
 
-   <div class="modal fade tp-product-modal tp-product-modal-styleDarkRed" id="producQuickViewModal" tabindex="-1"
-      aria-labelledby="producQuickViewModal" aria-hidden="true"> 
+   <div class="modal fade tp-product-modal tp-product-modal-styleDarkRed" id="productQuickViewModal" tabindex="-1"
+      aria-labelledby="productQuickViewModal" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
          <div class="modal-content">
             <div class="tp-product-modal-content d-lg-flex align-items-start" style="padding: 20px 20px 20px;">
                <button type="button" class="tp-product-modal-close-btn" data-bs-toggle="modal"
-                  data-bs-target="#producQuickViewModal"><i class="fa-regular fa-xmark"></i></button>
-
-
+                  data-bs-target="#productQuickViewModal"><i class="fa-regular fa-xmark"></i></button>
                <app-product-detail [product]="selectedProduct" [modalView]="true"></app-product-detail>
             </div>
          </div>
