@@ -77,6 +77,7 @@ export class HomeComponent implements OnInit {
 
   checkProduct(product: Product) {
     this.selectedProduct = product;
+    console.log(product);
   }
 
   setActiveIndex(index: number) {
