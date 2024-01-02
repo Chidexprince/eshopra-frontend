@@ -5,8 +5,6 @@ import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Product } from '../../../shared/models/product'
 
-
-
 @Injectable()
 export class ProductService {
   url = environment.apiUrl + '/products';

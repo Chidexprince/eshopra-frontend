@@ -38,11 +38,8 @@ export class WishlistService {
   }
 
   removeFromWishlist(item: CartItem) {
-    console.log(item)
     const currentWishlist = this.wishlistSubject.value;
-    console.log(currentWishlist);
     const updatedWishlist = currentWishlist.filter((wishlistItem) => wishlistItem.id !== item.id);
-    console.log(updatedWishlist);
     this.saveWishlist(updatedWishlist);
   }
 

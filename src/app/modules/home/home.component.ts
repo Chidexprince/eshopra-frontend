@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     .subscribe(data  => {
       this.loader = false;
       this.products = data.content;
-      console.log(data)
+      
     }, error => {
       console.log(error.message)
       this.loader = false;
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     this.productCategoryService.getProductCategory()
     .subscribe(data  => {
       this.productCategory = data.content;
-      console.log(data)
+      
     }, error => {
       console.log(error.message)
     })
@@ -68,16 +68,14 @@ export class HomeComponent implements OnInit {
       this.loader = false;
       this.products = [];
       this.products = data.content;
-      console.log(data)
     }, error => {
       this.loader = false;
-      console.log(error.message)
     })
   }
 
   checkProduct(product: Product) {
     this.selectedProduct = product;
-    console.log(product);
+    
   }
 
   setActiveIndex(index: number) {

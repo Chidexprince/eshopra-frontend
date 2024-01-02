@@ -23,13 +23,13 @@
                     <div class="d-flex flex-column">
                         <div class="d-flex mb-1" *ngFor="let cartItem of cartItems">
                             <span class="cartmini__thumb">
-                                <a href="product-details.html">
+                                <a>
                                     <img src={{cartItem.imageUrl}} alt={{cartItem.name}}>
                                 </a>
                             </span>
 
                             <div class="cartmini__content">
-                                <h5 class="cartmini__title"><a href="product-details.html">{{cartItem.name}}</a>
+                                <h5 class="cartmini__title"><a>{{cartItem.name}}</a>
                                 </h5>
                                 <div class="cartmini__price-wrapper">
                                     <span class="cartmini__price mr-10">{{cartItem.unitPrice.toFixed(2) | currency:
@@ -48,7 +48,7 @@
             <div class="cartmini__empty text-center d-none">
                 <img src="assets/img/product/cartmini/empty-cart.png" alt="">
                 <p>Your Cart is empty</p>
-                <a href="shop.html" class="tp-btn">Go to Shop</a>
+                <a class="tp-btn">Go to Shop</a>
             </div>
         </div>
         <div class="cartmini__checkout">
@@ -57,8 +57,8 @@
                 <span>{{totalPrice.toFixed(2) | currency: 'USD'}}</span>
             </div>
             <div class="cartmini__checkout-btn">
-                <a href="cart.html" class="tp-btn mb-10 w-100"> view cart</a>
-                <a href="checkout.html" class="tp-btn tp-btn-border w-100"> checkout</a>
+                <a routerLink="/cart" class="tp-btn mb-10 w-100">view cart</a>
+                <a  class="tp-btn tp-btn-border w-100"> checkout</a>
             </div>
         </div>
     </div>
