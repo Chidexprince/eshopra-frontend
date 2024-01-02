@@ -47,7 +47,6 @@ export class CartService {
     const itemIndex = this.cartItems.findIndex(
       (item) => item.id === cartItemId
     );
-    console.log(cartItemId)
 
     if (itemIndex !== -1) {
       this.cartItems.splice(itemIndex, 1)[0];

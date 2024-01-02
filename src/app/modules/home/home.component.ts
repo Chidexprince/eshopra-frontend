@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
   }
 
   getProductList() {
-    console.log("clicked")
     this.loader = true;
     this.productService.getProducts(0, 8)
     .subscribe(data  => {

@@ -33,11 +33,9 @@ export class ProductQuantityCartComponent implements OnInit {
   }
 
   decreaseQuantity(product: Product) {
-    console.log(product)
     let cartItem = new CartItem(product);
     if (cartItem) this.cartService.decreaseQuantity(cartItem);
     if (this.cartItem && this.cartItem.quantity < 1) {
-      console.log(cartItem)
       this.cartService.removeFromCart(cartItem.id);
       this.cartItem = this.cartService.findCartItemByProductId(product.id);
       this.cartItemId.emit(product.id);

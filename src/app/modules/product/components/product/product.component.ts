@@ -31,8 +31,6 @@ export class ProductComponent {
   }
 
   findCartItemByProductId(productId: number) {
-    console.log(productId, "cartQuantity")
-    console.log(this.cartService.findCartItemByProductId(productId))
     return this.cartService.findCartItemByProductId(productId);
   }
 

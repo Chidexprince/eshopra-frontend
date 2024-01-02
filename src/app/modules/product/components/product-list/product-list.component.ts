@@ -101,7 +101,6 @@ export class ProductListComponent implements OnInit {
     this.productService.findProductsByName(name, this.currentPage - 1, this.size)
     .subscribe(data  => {
       this.loader = false;
-      console.log(data);
       this.products = [];
       this.products = data.content;
       this.paginationDto.totalSize = data.totalElements;
