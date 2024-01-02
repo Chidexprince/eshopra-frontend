@@ -14,6 +14,7 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WishlistStatusComponent } from './components/wishlist-status/wishlist-status.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { WishlistStatusComponent } from './components/wishlist-status/wishlist-s
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

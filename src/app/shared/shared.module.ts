@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from '../modules/product/components/product-detail/product-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { ProductQuantityCartComponent } from '../components/product-quantity-cart/product-quantity-cart.component';
 
 
 
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     LoaderComponent,
     ProductComponent,
     ProductCategoryComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductQuantityCartComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     LoaderComponent,
     ProductComponent,
     ProductCategoryComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductQuantityCartComponent
   ]
 })
 export class SharedModule { }

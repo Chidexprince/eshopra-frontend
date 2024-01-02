@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartItem } from 'src/app/common/cart-item';
 import { CartService } from 'src/app/services/cart.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
@@ -7,14 +7,18 @@ import { Product } from 'src/app/shared/models/product';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
   @Input()
   product!: Product;
+  cartItem: CartItem | undefined;
   @Output() selectProduct = new EventEmitter<Product>();
 
-  constructor(private cartService: CartService, private wishlistService: WishlistService) {}
+  constructor(
+    private cartService: CartService,
+    private wishlistService: WishlistService
+  ) {}
 
   productClick() {
     this.selectProduct.emit(this.product);
@@ -23,22 +27,25 @@ export class ProductComponent {
   addToCart(product: Product) {
     let cartItem = new CartItem(product);
     this.cartService.addToCart(cartItem);
+    this.cartItem = this.findCartItemByProductId(product.id);
+  }
+
+  findCartItemByProductId(productId: number) {
+    return this.cartService.findCartItemByProductId(productId);
   }
 
 
-  isInWishlist(product: Product){
+  isInWishlist(product: Product) {
     let wishItem = new CartItem(product);
     return this.wishlistService.isItemInWishlist(wishItem);
   }
 
   toggleWishlist(product: Product) {
     let wishItem = new CartItem(product);
-    if(this.wishlistService.isItemInWishlist(wishItem)) {
+    if (this.wishlistService.isItemInWishlist(wishItem)) {
       this.wishlistService.removeFromWishlist(wishItem);
     } else {
       this.wishlistService.addToWishlist(wishItem);
     }
   }
-
-
 }

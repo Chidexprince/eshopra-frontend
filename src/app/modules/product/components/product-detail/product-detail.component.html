@@ -66,28 +66,15 @@
 
                       <!-- actions -->
                       <div class="tp-product-details-action-wrapper">
-                         <h3 class="tp-product-details-action-title">Quantity</h3>
-                         <div class="tp-product-details-action-item-wrapper d-flex align-items-center">
-                            <div class="tp-product-details-quantity">
-                               <div class="tp-product-quantity mb-15 mr-15">
-                                  <span class="tp-cart-minus" (click)="quantity - 1">
-                                     <svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 1H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                     </svg>                                                            
-                                  </span>
-                                  <input class="tp-cart-input" type="text" name="quantity" [(ngModel)]="quantity">
-                                  <span class="tp-cart-plus" (click)="quantity + 1">
-                                     <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 6H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M5.5 10.5V1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                     </svg>
-                                  </span>
-                               </div>
+                        
+                       <div class="tp-product-details-action-item-wrapper d-flex align-items-center">
+                            <div>
+                              <app-product-quantity-cart [product]="product"></app-product-quantity-cart>
                             </div>
-                            <div class="tp-product-details-add-to-cart mb-15 w-100">
+                            <div *ngIf="!cartItem?.quantity" class="tp-product-details-add-to-cart mb-15 w-100">
                                <button class="tp-product-details-buy-now-btn w-100" (click)="addToCart(product)">Add To Cart</button>
                             </div>
-                         </div>
+                         </div> 
                          
                       </div>
                       <div class="tp-product-details-action-sm" >
@@ -329,7 +316,7 @@
                                            <div class="tp-product-details-review-avater d-flex align-items-start">
                                               <div class="tp-product-details-review-avater-thumb">
                                                  <a href="#">
-                                                    <img src="assets/img/users/user-3.jpg" alt="">
+                                                    <img src="" alt="">
                                                  </a>
                                               </div>
                                               <div class="tp-product-details-review-avater-content">
@@ -351,7 +338,7 @@
                                            <div class="tp-product-details-review-avater d-flex align-items-start">
                                               <div class="tp-product-details-review-avater-thumb">
                                                  <a href="#">
-                                                    <img src="assets/img/users/user-2.jpg" alt="">
+                                                    <img src="" alt="">
                                                  </a>
                                               </div>
                                               <div class="tp-product-details-review-avater-content">
@@ -454,8 +441,8 @@
                       <div class="swiper-slide">
                          <div class="tp-product-item-3 tp-product-style-primary mb-50">
                             <div class="tp-product-thumb-3 mb-15 fix p-relative z-index-1">
-                               <a href="product-details.html">
-                                  <img src="assets/img/product/related/product-related-1.jpg" alt="">
+                               <a>
+                                  <img src="" alt="">
                                </a>
     
                                <!-- product badge -->
@@ -505,7 +492,7 @@
                                   <span>Tablet</span>
                                </div>
                                <h3 class="tp-product-title-3">
-                                  <a href="product-details.html">GalaxyS6 Android Tablet</a>
+                                  <a>GalaxyS6 Android Tablet</a>
                                </h3>
                                <div class="tp-product-price-wrapper-3">
                                   <span class="tp-product-price-3 new-price">$102.00</span>
@@ -517,8 +504,8 @@
                       <div class="swiper-slide">
                          <div class="tp-product-item-3 tp-product-style-primary mb-50">
                             <div class="tp-product-thumb-3 mb-15 fix p-relative z-index-1">
-                               <a href="product-details.html">
-                                  <img src="assets/img/product/related/product-related-2.jpg" alt="">
+                               <a>
+                                  <img src="" alt="">
                                </a>
 
 
@@ -564,7 +551,7 @@
                                   <span>SmartPhone</span>
                                </div>
                                <h3 class="tp-product-title-3">
-                                  <a href="product-details.html">Microsoft Surface Pro 8-13"</a>
+                                  <a>Microsoft Surface Pro 8-13"</a>
                                </h3>
                                <div class="tp-product-price-wrapper-3">
                                   <span class="tp-product-price-3">$240.00</span>
@@ -575,8 +562,8 @@
                       <div class="swiper-slide">
                          <div class="tp-product-item-3 tp-product-style-primary mb-50">
                             <div class="tp-product-thumb-3 mb-15 fix p-relative z-index-1">
-                               <a href="product-details.html">
-                                  <img src="assets/img/product/related/product-related-3.jpg" alt="">
+                               <a>
+                                  <img src="" alt="">
                                </a>
     
                                <!-- product badge -->
@@ -626,7 +613,7 @@
                                   <span>Video & Camera</span>
                                </div>
                                <h3 class="tp-product-title-3">
-                                  <a href="product-details.html">4K Digital Video Camera.</a>
+                                  <a>4K Digital Video Camera.</a>
                                </h3>
                                <div class="tp-product-price-wrapper-3">
                                   <span class="tp-product-price-3 new-price">$76.00</span>
@@ -638,8 +625,8 @@
                       <div class="swiper-slide">
                          <div class="tp-product-item-3 tp-product-style-primary mb-50">
                             <div class="tp-product-thumb-3 mb-15 fix p-relative z-index-1">
-                               <a href="product-details.html">
-                                  <img src="assets/img/product/related/product-related-4.jpg" alt="">
+                               <a>
+                                  <img src="" alt="">
                                </a>
     
                                <!-- product badge -->
@@ -689,7 +676,7 @@
                                   <span>Smart Watch</span>
                                </div>
                                <h3 class="tp-product-title-3">
-                                  <a href="product-details.html">Discover Skincare watch</a>
+                                  <a>Discover Skincare watch</a>
                                </h3>
                                <div class="tp-product-price-wrapper-3">
                                   <span class="tp-product-price-3">$44.00</span>

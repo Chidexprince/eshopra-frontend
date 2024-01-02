@@ -14,6 +14,7 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class ProductDetailComponent implements OnInit{
   @Input()
   product!: Product;
+  cartItem: CartItem | undefined;
 
   @Input()
   modalView!: boolean;
@@ -28,7 +29,7 @@ export class ProductDetailComponent implements OnInit{
     if(this.modalView) {
       this.getProductDetail(this.product?.id)
     } else {
-      this.getProductDetail(productId);
+      if(productId) this.getProductDetail(productId);
     }
     
   }
@@ -43,10 +44,9 @@ export class ProductDetailComponent implements OnInit{
   }
 
   addToCart(product: Product) {
-    console.log(this.quantity)
     let cartItem = new CartItem(product);
-    cartItem.quantity = this.quantity;
     this.cartService.addToCart(cartItem);
+    this.cartItem = this.cartService.findCartItemByProductId(product.id);
   }
 
   isInWishlist(product: Product){

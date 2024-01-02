@@ -12,4 +12,7 @@ export interface Product {
     dateCreated: string;
     lastUpdated: string;
     category: ProductCategory;
+
+    // transient property
+    quantity: number;
 }
