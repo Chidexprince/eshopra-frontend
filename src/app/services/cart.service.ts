@@ -70,11 +70,15 @@ export class CartService {
   }
   
   decreaseQuantity(cartItem: CartItem) {
+
     let existingCartItem = this.findCartItemByProductId(cartItem.id);
   
     if (existingCartItem && existingCartItem.quantity > 1) {
-      existingCartItem.quantity--;
-      
+      existingCartItem.quantity--; 
+    } 
+
+    if (existingCartItem && existingCartItem.quantity == 1) {
+      this.removeFromCart(existingCartItem.id); 
     }
     this.computeCartTotal();
   }

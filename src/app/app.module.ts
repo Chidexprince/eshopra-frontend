@@ -15,6 +15,7 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WishlistStatusComponent } from './components/wishlist-status/wishlist-status.component';
 import { SharedModule } from './shared/shared.module';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { SharedModule } from './shared/shared.module';
     CartStatusComponent,
     WishlistComponent,
     WishlistStatusComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
